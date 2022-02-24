@@ -1,4 +1,5 @@
 ﻿using Entities.Abstract;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
@@ -6,5 +7,7 @@ namespace Entities
 	{
 		public string RawData { get; set; }
 		public string Images { get; set; }
+		[MaxLength(20)]
+		public string Status { get; set; }
 	}
 }

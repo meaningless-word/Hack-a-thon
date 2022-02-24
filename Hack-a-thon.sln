@@ -10,6 +10,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{31636794-39A8-4A53-AD5C-45E34E542978}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{106D182A-FDCD-44C0-9AE8-73E34E07A622}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31636794-39A8-4A53-AD5C-45E34E542978} = {31636794-39A8-4A53-AD5C-45E34E542978}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{8DDAC679-CB0B-4A1A-8FB6-AB1AE4DA25F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +39,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{538CB472-D38D-46B7-BF92-86D2D16F3C2C} = {8DDAC679-CB0B-4A1A-8FB6-AB1AE4DA25F7}
 		{31636794-39A8-4A53-AD5C-45E34E542978} = {2331BAAF-5E63-4708-BE47-A2A45550A9F0}
 		{106D182A-FDCD-44C0-9AE8-73E34E07A622} = {2331BAAF-5E63-4708-BE47-A2A45550A9F0}
 	EndGlobalSection
