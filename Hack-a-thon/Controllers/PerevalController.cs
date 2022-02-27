@@ -35,9 +35,6 @@ namespace Hack_a_thon.Controllers
 		{
 			try
 			{
-
-
-
 				int id = _perevalService.AddPereval(_mapper.Map<AddPerevalRequest, PerevalDTO>(request));
 				return StatusCode(200, $"{request.title} Пока всё норм... {id}");
 

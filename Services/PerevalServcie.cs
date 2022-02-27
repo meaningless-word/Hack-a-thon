@@ -4,6 +4,8 @@ using Repositories.Abstract;
 using Services.Abstract;
 using System;
 
+using System.Text.Json;
+
 namespace Services
 {
 	public class PerevalSerice : IPerevalService
@@ -21,6 +23,7 @@ namespace Services
 			// проверить на всякое
 
 			// заджейсонить
+			string raw_data = JsonSerializer.Serialize<PerevalDTO>(item);
 
 
 			throw new NotImplementedException();

@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using Repositories.Abstract;
 using Services;
 using Services.Abstract;
 using System.Reflection;
+using Validators;
 
 namespace Hack_a_thon
 {
@@ -37,6 +39,8 @@ namespace Hack_a_thon
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 			services.AddScoped<IPerevalService, PerevalSerice>();
+
+			services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddPerevalRequestValidator>());
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
