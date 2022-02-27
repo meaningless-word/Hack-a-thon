@@ -1,10 +1,6 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories
 {
@@ -18,8 +14,22 @@ namespace Repositories
 		{
 			modelBuilder.Entity<PerevalAddedEntity>(entity =>
 			{
-				//entity.HasKey(e => e.Id).HasName("untitled_table_195_pkey");
-				entity.Property(e => e.DateAdded).HasColumnName()
+				entity.Property<int>(e => e.Id).HasColumnName("id");
+				entity.Property<DateTime>(e => e.DateAdded).HasColumnName("date_added");
+				entity.Property<string>(e => e.RawData).HasColumnName("raw_data");
+				entity.Property<string>(e => e.Images).HasColumnName("images");
+				entity.Property<string>(e => e.Status).HasColumnName("status").HasMaxLength(20);
+				entity.HasKey(e => e.Id).HasName("untitled_table_195_pkey");
+				entity.ToTable("pereval_added");
+			});
+
+			modelBuilder.Entity<PerevalImagesEntity>(entity =>
+			{
+				entity.Property<int>(e => e.Id).HasColumnName("id");
+				entity.Property<DateTime>(e => e.DateAdded).HasColumnName("date_added");
+				entity.Property<byte[]>(e => e.Image).HasColumnName("img");
+				entity.HasKey(e => e.Id).HasName("pereval_added_pkey");
+				entity.ToTable("pereval_images");
 			});
 		}
 	}
