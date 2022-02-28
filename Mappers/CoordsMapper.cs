@@ -9,6 +9,7 @@ namespace Mappers
 		public CoordsMapper()
 		{
 			CreateMap<CoordsModel, CoordsDTO>();
+			CreateMap<CoordsDTO, CoordsModel>();
 		}
 	}
 }

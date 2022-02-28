@@ -9,6 +9,7 @@ namespace Mappers
 		public UserMapper()
 		{
 			CreateMap<UserModel, UserDTO>();
+			CreateMap<UserDTO, UserModel>();
 		}
 	}
 }

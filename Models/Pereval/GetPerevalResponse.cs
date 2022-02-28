@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DTO
+namespace Models.Pereval
 {
-	public class PerevalDTO
+	public class GetPerevalResponse
 	{
 		public int id { get; set; }
 		public string beautyTitle { get; set; }
@@ -10,10 +10,10 @@ namespace DTO
 		public string other_titles { get; set; }
 		public string connect { get; set; }
 		public DateTime add_time { get; set; }
-		public UserDTO user { get; set; }
-		public CoordsDTO coords { get; set; }
+		public UserModel user { get; set; }
+		public CoordsModel coords { get; set; }
 		public string type { get; set; }
-		public LevelDTO level { get; set; }
-		public ImageDTO images { get; set; }
+		public LevelModel level { get; set; }
+		public ImageModel[] images { get; set; }
 	}
 }

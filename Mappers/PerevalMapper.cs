@@ -12,6 +12,7 @@ namespace Mappers
 			CreateMap<AddPerevalRequest, PerevalDTO>();
 			CreateMap<PerevalDTO, PerevalAddedEntity>()
 				.ForMember(x => x.DateAdded, opt => opt.MapFrom(src => src.add_time));
+			CreateMap<PerevalDTO, GetPerevalResponse>();
 		}
 	}
 }

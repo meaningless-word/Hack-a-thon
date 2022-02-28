@@ -30,7 +30,7 @@ namespace Hack_a_thon.Controllers
 		/// <param name="request"></param>
 		/// <returns></returns>
 		[HttpPost]
-		[Route("")]
+		[Route("Add")]
 		public IActionResult Add([FromBody] AddPerevalRequest request)
 		{
 			try
@@ -44,6 +44,18 @@ namespace Hack_a_thon.Controllers
 				return StatusCode(400, $"Ошибка: нехватка полей! {ex.Message}");
 			}
 
+		}
+
+		[HttpGet]
+		[Route("GetById/{id}")]
+		public IActionResult GetPereval([FromRoute] int id)
+		{
+			var result = _mapper.Map<PerevalDTO, GetPerevalResponse>(_perevalService.GetPerevalById(id));
+
+
+
+
+			return StatusCode(200, result);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿namespace DTO
+﻿using System.Text.Json.Serialization;
+
+namespace DTO
 {
 	public class CoordsDTO
 	{

@@ -9,6 +9,7 @@ namespace Mappers
 		public ImageMapper()
 		{
 			CreateMap<ImageModel, ImageDTO>();
+			CreateMap<ImageDTO, ImageModel>();
 		}
 	}
 }

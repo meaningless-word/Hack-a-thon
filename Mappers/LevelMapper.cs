@@ -9,6 +9,7 @@ namespace Mappers
 		public LevelMapper()
 		{
 			CreateMap<LevelModel, LevelDTO>();
+			CreateMap<LevelDTO, LevelModel>();
 		}
 	}
 }
