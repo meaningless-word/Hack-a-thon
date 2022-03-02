@@ -5,6 +5,7 @@ namespace Models.Pereval
 	public class GetPerevalResponse
 	{
 		public int id { get; set; }
+		public int pereval_id { get; set; }
 		public string beautyTitle { get; set; }
 		public string title { get; set; }
 		public string other_titles { get; set; }
@@ -14,6 +15,6 @@ namespace Models.Pereval
 		public CoordsModel coords { get; set; }
 		public string type { get; set; }
 		public LevelModel level { get; set; }
-		public ImageModel[] images { get; set; }
+		public ImageModel images { get; set; }
 	}
 }

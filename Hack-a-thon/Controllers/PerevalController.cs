@@ -50,11 +50,8 @@ namespace Hack_a_thon.Controllers
 		[Route("GetById/{id}")]
 		public IActionResult GetPereval([FromRoute] int id)
 		{
-			var result = _mapper.Map<PerevalDTO, GetPerevalResponse>(_perevalService.GetPerevalById(id));
-
-
-
-
+			PerevalAddedDTO item = _perevalService.GetPerevalById(id);
+			GetPerevalResponse result = _mapper.Map<GetPerevalResponse>(item);
 			return StatusCode(200, result);
 		}
 	}

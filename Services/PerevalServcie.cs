@@ -29,20 +29,10 @@ namespace Services
 			throw new NotImplementedException();
 		}
 
-		public PerevalDTO GetPerevalById(int id)
+		public PerevalAddedDTO GetPerevalById(int id)
 		{
-			var item = _unitOfWork.Perevals.GetItemById(id);
-			PerevalDTO itemDTO = JsonSerializer.Deserialize<PerevalDTO>(
-				item.RawData, 
-				new JsonSerializerOptions() { NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString}
-				);
-
-			itemDTO.images = JsonSerializer.Deserialize<ImageDTO>(
-				item.Images,
-				new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }
-				);
-
-			return new PerevalDTO();
+			PerevalAddedDTO item = _mapper.Map<PerevalAddedDTO>(_unitOfWork.Perevals.GetItemById(id));
+			return item;
 		}
 	}
 }

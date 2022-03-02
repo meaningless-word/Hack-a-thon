@@ -7,9 +7,8 @@ namespace Validators
 	{
 		public AddPerevalRequestValidator()
 		{
-			RuleFor(x => x.beautyTitle).NotEmpty();
 			RuleFor(x => x.title).NotEmpty();
-			RuleFor(x => x.user).NotEmpty();
+			RuleFor(x => x.user.email).NotEmpty();
 			RuleFor(x => x.coords).NotEmpty();
 
 		}

@@ -9,9 +9,9 @@ namespace Mappers
 	{
 		public PerevalMapper()
 		{
-			CreateMap<AddPerevalRequest, PerevalDTO>();
-			CreateMap<PerevalDTO, PerevalAddedEntity>()
-				.ForMember(x => x.DateAdded, opt => opt.MapFrom(src => src.add_time));
+			//CreateMap<AddPerevalRequest, PerevalDTO>();
+			//CreateMap<PerevalDTO, PerevalAddedEntity>()
+			//	.ForMember(x => x.DateAdded, opt => opt.MapFrom(src => src.add_time));
 			CreateMap<PerevalDTO, GetPerevalResponse>();
 		}
 	}
